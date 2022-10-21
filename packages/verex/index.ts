@@ -30,7 +30,7 @@ const defaultFormats = {
 };
 
 /**
- * A class to manage the assets in stek
+ * A class to manage the assets in verex
  */
 class Assets {
   assetsRouter: Router;

@@ -7,7 +7,7 @@ export function getConfig() {
 
   let configFile;
   try {
-    configFile = fs.readFileSync(".stekrc.json");
+    configFile = fs.readFileSync(".verexrc.json");
   } catch {
     console.error("Error reading config file");
     process.exit();

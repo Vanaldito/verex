@@ -1,5 +1,5 @@
 {
-  "name": "stek",
+  "name": "verex",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
@@ -7,14 +7,14 @@
   "description": "An npx tool to run and build a fullstack application made with express and react",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vanaldito/stek.git",
-    "directory": "packages/stek"
+    "url": "https://github.com/vanaldito/verex.git",
+    "directory": "packages/verex"
   },
   "bugs": {
-    "url": "https://github.com/vanaldito/stek/issues"
+    "url": "https://github.com/vanaldito/verex/issues"
   },
   "bin": {
-    "stek": "bin/stek.js"
+    "verex": "bin/verex.js"
   },
   "keywords": [
     "fullstack",

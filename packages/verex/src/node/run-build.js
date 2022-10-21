@@ -18,8 +18,8 @@ export function runBuild() {
     format: "cjs",
     platform: "node",
     define: {
-      "process.env.STEK_ENV": '"production"',
-      "process.env.STEK_HTML_PATH": '"static/index.html"',
+      "process.env.VEREX_ENV": '"production"',
+      "process.env.VEREX_HTML_PATH": '"static/index.html"',
     },
     minify: true,
     bundle: true,
@@ -38,7 +38,7 @@ export function runBuild() {
 function runCommand(command) {
   return new Promise((resolve, reject) => {
     const child = spawn("sh", ["-c", command], { stdio: "inherit" });
-    child.on("close", (code) => {
+    child.on("close", code => {
       if (code !== 0) {
         reject({ command });
         return;

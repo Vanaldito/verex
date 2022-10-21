@@ -10,7 +10,7 @@ export function runDev() {
   const config = getConfig();
 
   const serverFile = config.serverFile;
-  const outfile = "server/stek.development.js";
+  const outfile = "server/verex.development.js";
 
   buildDevHTMLFile();
 
@@ -21,8 +21,8 @@ export function runDev() {
     format: "cjs",
     platform: "node",
     define: {
-      "process.env.STEK_ENV": '"development"',
-      "process.env.STEK_HTML_PATH": '"static/index.html"',
+      "process.env.VEREX_ENV": '"development"',
+      "process.env.VEREX_HTML_PATH": '"static/index.html"',
     },
     bundle: true,
     watch: {

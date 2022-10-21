@@ -1,6 +1,6 @@
 {
-  "name": "stek-monorepo",
-  "description": "Monorepository of stek. A great tool to develop express and react fullstack applications",
+  "name": "verex-monorepo",
+  "description": "Monorepo of verex. A great tool to develop express and react fullstack applications",
   "author": "Vanaldito",
   "license": "MIT"
 }
