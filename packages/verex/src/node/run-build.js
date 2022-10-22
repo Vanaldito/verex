@@ -4,14 +4,14 @@ import { build } from "esbuild";
 
 import { getConfig } from "./config.js";
 
-export function runBuild() {
+export async function runBuild() {
   const config = getConfig();
 
   const serverFile = config.serverFile;
 
   console.log("Building...");
 
-  build({
+  await build({
     entryPoints: [serverFile],
     outdir: "dist",
     allowOverwrite: true,
@@ -23,16 +23,16 @@ export function runBuild() {
     },
     minify: true,
     bundle: true,
-  }).then(() => {
-    if (fs.existsSync("dist/static")) {
-      fs.rmSync("dist/static", { recursive: true, force: true });
-    }
-
-    fs.mkdirSync("dist/static");
-
-    runCommand("cd client && yarn build");
-    runCommand("mv client/dist/* dist/static");
   });
+
+  if (fs.existsSync("dist/static")) {
+    fs.rmSync("dist/static", { recursive: true, force: true });
+  }
+
+  fs.mkdirSync("dist/static");
+
+  await runCommand("cd client && yarn build");
+  await runCommand("mv client/dist/* dist/static");
 }
 
 function runCommand(command) {
