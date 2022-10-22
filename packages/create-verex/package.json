@@ -1,0 +1,27 @@
+{
+  "name": "create-verex",
+  "version": "1.0.0",
+  "description": "An npx tool to create a fullstack application using express and react",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vanaldito/verex.git",
+    "directory": "packages/create-verex"
+  },
+  "type": "module",
+  "bin": {
+    "create-verex": "bin/create-verex.js"
+  },
+  "keywords": [
+    "express",
+    "react",
+    "fullstack"
+  ],
+  "author": "Vanaldito",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "minimist": "^1.2.6",
+    "prompts": "^2.4.2"
+  }
+}

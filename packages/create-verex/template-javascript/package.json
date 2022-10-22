@@ -1,0 +1,13 @@
+{
+  "name": "template-javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "verex",
+    "build": "verex build"
+  },
+  "devDependencies": {
+    "verex": "^1.0.0"
+  }
+}
