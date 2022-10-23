@@ -1,6 +1,6 @@
 {
   "name": "create-verex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An npx tool to create a fullstack application using express and react",
   "main": "index.js",
   "repository": {
