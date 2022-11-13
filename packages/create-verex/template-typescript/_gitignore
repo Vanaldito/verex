@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 
+/server/static/index.html
 verex.development.js
 
 # Editor directories and files
