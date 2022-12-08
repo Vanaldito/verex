@@ -50,7 +50,7 @@ export async function runBuild() {
 
   const serverPkg = JSON.parse(fs.readFileSync("server/package.json", "utf-8"));
   delete serverPkg.devDependencies;
-  serverFile.name += "-build";
+  serverPkg.name += "-build";
   serverPkg.scripts = { start: "node index.js" };
   fs.writeFileSync("dist/package.json", JSON.stringify(serverPkg, null, 2));
 }
