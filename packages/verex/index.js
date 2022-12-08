@@ -1,10 +1,4 @@
-import { Application, Router } from "express";
-
-interface AssetsFormats {
-  image?: Array<string>;
-  video?: Array<string>;
-  audio?: Array<string>;
-}
+import { Router } from "express";
 
 const defaultFormats = {
   image: [
@@ -33,7 +27,7 @@ const defaultFormats = {
  * A class to manage the assets in verex
  */
 class Assets {
-  assetsRouter: Router;
+  assetsRouter;
 
   /**
    * Create an instance of Assets.
@@ -42,10 +36,10 @@ class Assets {
    * @param {Array<string>} [extraFormats.video] - Video formats not included by default.
    * @param {Array<string>} [extraFormats.audio] - Audio formats not included by default.
    */
-  constructor(extraFormats: AssetsFormats = {}) {
+  constructor(extraFormats = {}) {
     this.assetsRouter = Router();
 
-    function createRouteRegex(formats: Array<string>) {
+    function createRouteRegex(formats) {
       return new RegExp(`/.+\\.(${formats.join("|")})$`);
     }
 
@@ -69,7 +63,7 @@ class Assets {
    * Create a redirect.
    * @param {RegExp} path - The path to apply the redirect.
    */
-  private createRoute(path: RegExp) {
+  createRoute(path) {
     this.assetsRouter.get(path, (req, res) => {
       const filePath = req.path;
       res.redirect(303, `http://localhost:3000${filePath}`);
@@ -80,7 +74,7 @@ class Assets {
    * Use the assets router in an app.
    * @param app The app to use the router.
    */
-  useRouter(app: Application) {
+  useRouter(app) {
     app.get("/*", this.assetsRouter);
   }
 }

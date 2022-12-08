@@ -23,6 +23,7 @@
   ],
   "main": "index.js",
   "dependencies": {
+    "@esbuild-plugins/node-resolve": "^0.1.4",
     "concurrently": "^7.4.0",
     "esbuild": "^0.15.12",
     "express": "^4.18.2",

@@ -1,6 +1,7 @@
 import path from "path";
 import concurrently from "concurrently";
 import { build } from "esbuild";
+import { NodeResolvePlugin } from "@esbuild-plugins/node-resolve";
 import { fileURLToPath } from "url";
 
 import { getConfig } from "./config.js";
@@ -29,10 +30,25 @@ export function runDev() {
       onRebuild(err) {
         if (err) console.error(err);
 
-        console.clear();
-        console.log("Rebuilding...");
+        setTimeout(() => {
+          console.clear();
+          console.log("Rebuilding...");
+        }, 300);
       },
     },
+    plugins: [
+      NodeResolvePlugin({
+        extensions: [".ts", ".js"],
+        onResolved: resolved => {
+          if (resolved.includes("node_modules")) {
+            return {
+              external: true,
+            };
+          }
+          return resolved;
+        },
+      }),
+    ],
   }).then(() => {
     console.clear();
     console.log("Watching...");
