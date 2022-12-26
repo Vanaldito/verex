@@ -5,6 +5,7 @@
   "license": "MIT",
   "author": "Vanaldito",
   "description": "An npx tool to run and build a fullstack application made with express and react",
+  "types": "./src/node/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/vanaldito/verex.git",
